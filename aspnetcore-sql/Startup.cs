@@ -63,8 +63,7 @@ namespace aspnetcore_sql
         /// <returns></returns>
         private static async Task<CosmosDbService> InitializeCosmosClientInstanceAsync(IConfigurationSection configurationSection)
         {
-            string connectionString = "AccountEndpoint=https://servicelinker-sql-cosmos.documents.azure.com:443/;AccountKey=4AfKEpKdsxibgloPh0Y4dXB8nSNzddl8HRzku3vFz9PpLF11JvYiuydgkZJNOasED5mGm8hIDfTX6XGyQR5PUQ==;";
-            //string connectionString = Environment.GetEnvironmentVariable("RESOURCECONNECTOR_MYCONN_CONNSTR");
+            string connectionString = Environment.GetEnvironmentVariable("RESOURCECONNECTOR_MYCONN_CONNSTR");
             CosmosDbService cosmosDbService = new CosmosDbService(connectionString);
             //Microsoft.Azure.Cosmos.DatabaseResponse database = await client.CreateDatabaseIfNotExistsAsync(databaseName);
             //await database.Database.CreateContainerIfNotExistsAsync(containerName, "/id");
